@@ -44,6 +44,10 @@ module Mastodon
         stream('public', options, &block)
       end
 
+      def local(options = {}, &block)
+        stream('public/local', options, &block)
+      end
+
       #
       # Calls an arbitrary streaming endpoint and returns the results
       # @yield [Mastodon::Status, Mastodon::Notification, Mastodon::Streaming::DeletedStatus] A stream of Mastodon objects.
